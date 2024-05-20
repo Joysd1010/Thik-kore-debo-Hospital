@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <>
+    <div className="gap-4 md:gap-3 md:flex-row flex flex-col md:items-center">
       <NavLink
         to={"/"}
         className={({ isActive }) =>
@@ -30,7 +30,7 @@ const NavBar = () => {
             ? " font-bold text-base md:text-xl text-blue-600 px-5 py-2   duration-300"
             : " font-bold text-base md:text-xl px-5  duration-300"
         }>Blog</NavLink>
-    </>
+    </div>
   );
 };
 
