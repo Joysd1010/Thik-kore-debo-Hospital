@@ -30,9 +30,10 @@ const Footer = () => {
            <div className=" md: pt-5">
               <h1 className=" text-2xl font-semibold">Important Links</h1>
               <div className="text-base flex flex-col gap-3 text-pink-900">
-                <NavLink className={`hover:translate-x-2 duration-300`} to={"/"}>Home </NavLink>
-                <NavLink className={`hover:translate-x-2 duration-300`} to={"toy"}>Toys </NavLink>
-                <NavLink className={`hover:translate-x-2 duration-300`} to={"contact"}>Contact Us </NavLink>
+                <NavLink to={'/'} className={`hover:translate-x-2 duration-300`} >Home </NavLink>
+                <NavLink to={'/doctors'} className={`hover:translate-x-2 duration-300`} >Doctors </NavLink>
+                <NavLink to={'/blog'}  className={`hover:translate-x-2 duration-300`} >Blogs</NavLink>
+                <NavLink to={'/services'} className={`hover:translate-x-2 duration-300`} >Service</NavLink>
               </div>
             </div>
             {/* ----------------Contact us part of the footer------------------- */}
@@ -40,7 +41,7 @@ const Footer = () => {
             <h1 className=" text-2xl font-semibold">GET IN TOUCH</h1>
               <div className=" flex items-center gap-2"><BiLogoGmail  size={25}/>info@kiddo.com</div>
               <div className=" flex items-center gap-2"><BiLocationPlus  size={25}/>123 Street, City, Country</div>
-              <div className=" flex items-center gap-2"><BsFillTelephoneFill size={25}/>123-456-7890</div>
+              <a href="tel:+8801580812107" className=" flex items-center gap-2"><BsFillTelephoneFill size={25}/>123-456-7890</a>
             
             </div>
         
