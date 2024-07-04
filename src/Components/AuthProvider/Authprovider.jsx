@@ -31,10 +31,7 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
     } 
   }, [token]);
-  useEffect(() => {
-    const LoggedUser = JSON.parse(localStorage.getItem("user"));
-      setUser(LoggedUser);
-  }, []);
+  
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
