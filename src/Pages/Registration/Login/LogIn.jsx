@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../Components/AuthProvider/Authprovider";
 import axios from "axios";
 import { RotatingLines } from "react-loader-spinner";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -36,7 +37,8 @@ const Login = () => {
       if (response.status === 200) {
         setToken(response.data.access_token);
         setUser({ email: response.data.email, full_name: response.data.full_name });
-        localStorage.setItem("user",{ email: response.data.email, full_name: response.data.full_name })
+        localStorage.setItem("user", JSON.stringify({ email: response.data.email, full_name: response.data.full_name }));
+
         console.log(localStorage.getItem('access_token'),localStorage.getItem('user'))
         Swal.fire({
           title: "Logged in",
@@ -151,6 +153,7 @@ const Login = () => {
               </Link>{" "}
               now.
             </p>
+            <div className="mx-auto w-full border-none text-[#1F2937] max-w-xs my-5 duration-1000 shadow-lg hover:shadow-[#5572e6] shadow-[#dd7474] bg-blue-400 hover:bg-[#F379A7] input input-bordered btn rounded-md  flex items-center">Continue with <FcGoogle size={30}/></div>
           </div>
         </div>
       </div>

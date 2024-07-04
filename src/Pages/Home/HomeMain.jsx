@@ -4,7 +4,11 @@ import { AuthContext } from "../../Components/AuthProvider/Authprovider";
 
 const HomeMain = () => {
 
-
+const perform=async()=>{
+  const {user}=useContext(AuthContext)
+  console.log("email:",user?.email)
+}
+perform()
   return (
     <div>
      
