@@ -6,7 +6,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 const Footer = () => {
   return (
    <>
-        <div className=" md:px-10 py-3 grid grid-cols-1 md:grid-cols-3 px-5 shadow-">
+        <div className=" md:px-10 py-3 bg-blue-50 grid grid-cols-1 md:grid-cols-3 px-5 shadow-">
           {/* -------------------------------------Hospital details----------------------------------------------- */}
           <div className="  flex flex-col gap-4">
             <div className=" flex items-center gap-3">
@@ -39,7 +39,7 @@ const Footer = () => {
             {/* ----------------Contact us part of the footer------------------- */}
             <div className="flex flex-col gap-3 md:pt-5"> 
             <h1 className=" text-2xl font-semibold">GET IN TOUCH</h1>
-              <div className=" flex items-center gap-2"><BiLogoGmail  size={25}/>info@kiddo.com</div>
+              <div className=" flex items-center gap-2"><BiLogoGmail  size={25}/>info@hospital.com</div>
               <div className=" flex items-center gap-2"><BiLocationPlus  size={25}/>123 Street, City, Country</div>
               <a href="tel:+8801580812107" className=" flex items-center gap-2"><BsFillTelephoneFill size={25}/>123-456-7890</a>
             

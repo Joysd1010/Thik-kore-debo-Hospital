@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import NavBar from "../../Components/Home/NavBar";
+import NavBar from "./NavBar";
 import { FcMenu } from "react-icons/fc";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex py-3 items-center md:px-10 justify-between px-3 shadow-blue-100 shadow-md">
+    <div className="flex py-3 bg-blue-50 items-center md:px-10 justify-between px-3 shadow-blue-100 shadow-md">
       {/* --------------------------------------------------LOGO------------------------------------------------- */}
       <Link to={"/"} className="flex items-center gap-3">
         <img src="https://i.ibb.co/n1xpXW5/LOGO.png" className="w-20" />
@@ -24,14 +24,14 @@ const Header = () => {
       </Link>
       {/* --------------------------------------------------Navigation------------------------------------------- */}
       <div
-        className={`flex justify-between gap-3 duration-500 md:static ease-out md:flex-row flex-col absolute bg-white md:items-center md:w-2/3 ${
-          menu ? "left-[270px] top-20 px-3 py-3" : "-left-40 top-20"
+        className={`flex justify-between gap-3 duration-500 md:static ease-out md:flex-row flex-col absolute  bg-blue-50 md:items-center md:w-2/3 ${
+          menu ? "left-[260px] top-20 px-3 py-3" : "-left-40 top-20"
         }`}
       >
-        <div>
+        <div className=" bg-blue-50">
           <NavBar />
         </div>
-        <div className="flex md:items-center gap-2">
+        <div className=" bg-blue-50 flex md:items-center gap-2">
           <Link to={"/signup"} className="hover:text-blue-700 duration-400 font-bold">
             SignUp
           </Link>
