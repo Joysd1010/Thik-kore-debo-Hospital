@@ -5,6 +5,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../Components/AuthProvider/Authprovider";
 import axios from "axios";
 import { RotatingLines } from "react-loader-spinner";
+import { FcGoogle } from "react-icons/fc";
+import Google from "../GoogleBtn/Google";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -36,7 +38,8 @@ const Login = () => {
       if (response.status === 200) {
         setToken(response.data.access_token);
         setUser({ email: response.data.email, full_name: response.data.full_name });
-        localStorage.setItem("user",{ email: response.data.email, full_name: response.data.full_name })
+        localStorage.setItem("user", JSON.stringify({ email: response.data.email, full_name: response.data.full_name }));
+
         console.log(localStorage.getItem('access_token'),localStorage.getItem('user'))
         Swal.fire({
           title: "Logged in",
@@ -151,6 +154,7 @@ const Login = () => {
               </Link>{" "}
               now.
             </p>
+            <Google/>
           </div>
         </div>
       </div>

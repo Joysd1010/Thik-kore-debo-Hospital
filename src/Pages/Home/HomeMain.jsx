@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Components/AuthProvider/Authprovider";
+
 
 const HomeMain = () => {
-
-
+  const LoggedUser = JSON.parse(localStorage.getItem("user"));
+  console.log(LoggedUser.email)
   return (
     <div>
      

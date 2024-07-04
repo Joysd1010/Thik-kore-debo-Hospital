@@ -6,6 +6,7 @@ import { useState } from "react";
 import { InfinitySpin } from "react-loader-spinner";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import axios from "axios";
+import Google from "../GoogleBtn/Google";
 
 const Register = () => {
   const { register, reset, handleSubmit, formState: { errors }, watch } = useForm();
@@ -297,8 +298,8 @@ const Register = () => {
               </Link>
             </small>
           </p>
-          <div className="md:mx-8 pb-10">
-            <button>click me</button>
+          <div className="">
+            <Google/>
           </div>
           <div className="flex justify-around py-3">
             {RegisterdUser && (

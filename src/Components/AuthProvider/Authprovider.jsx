@@ -19,15 +19,19 @@ const AuthProvider = ({ children }) => {
     setToken,
   };
 
+  
+
+
   useEffect(() => {
     if (token) {
       
       localStorage.setItem("access_token", token);
-      localStorage.getItem("user")
+      const LoggedUser = JSON.parse(localStorage.getItem("user"));
+      setUser(LoggedUser);
       setLoading(false);
     } 
   }, [token]);
-
+  
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
