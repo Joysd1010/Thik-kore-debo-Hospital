@@ -8,7 +8,7 @@ const Layout = () => {
         <div className=' bg-white text-black'>
             <Header/>
             <Outlet/>
-            {/* <Footer/> */}
+            <Footer/>
 
         </div>
     );

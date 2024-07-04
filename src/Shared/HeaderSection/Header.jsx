@@ -1,25 +1,59 @@
 import { Link } from "react-router-dom";
-import NavBar from "../../Components/Home/NavBar";
-import { FaPhoneAlt } from "react-icons/fa";
+import NavBar from "./NavBar";
+import { FcMenu } from "react-icons/fc";
+import { useState } from "react";
+import { RxCross1 } from "react-icons/rx";
 
 const Header = () => {
+  const [menu, setMenu] = useState(false);
+
+  const handleMenuOpen = () => {
+    setMenu(true);
+  };
+
+  const handleMenuClose = () => {
+    setMenu(false);
+  };
+
   return (
-    <div className=" flex items-center md:mx-8 justify-between mx-3 "> 
-        {/* --------------------------------------------------LOGO------------------------------------------------- */}
-      <Link to={'/'} className=" flex items-center gap-3">
-        <img src="https://i.ibb.co/n1xpXW5/LOGO.png" className=" w-20" />
-        <h1 className=" text-3xl font-bold">Thik Kore Dibo</h1>
+    <div className="flex py-3 bg-blue-50 items-center md:px-10 justify-between px-3 shadow-blue-100 shadow-md">
+      {/* --------------------------------------------------LOGO------------------------------------------------- */}
+      <Link to={"/"} className="flex items-center gap-3">
+        <img src="https://i.ibb.co/n1xpXW5/LOGO.png" className="w-20" />
+        <h1 className="text-3xl font-bold">Thik Kore Dibo</h1>
       </Link>
-
-      <div>
-        <NavBar/>
+      {/* --------------------------------------------------Navigation------------------------------------------- */}
+      <div
+        className={`flex justify-between gap-3 duration-500 md:static ease-out md:flex-row flex-col absolute  bg-blue-50 md:items-center md:w-2/3 ${
+          menu ? "left-[260px] top-20 px-3 py-3" : "-left-40 top-20"
+        }`}
+      >
+        <div className=" bg-blue-50">
+          <NavBar />
+        </div>
+        <div className=" bg-blue-50 flex md:items-center gap-2">
+          <Link to={"/signup"} className="hover:text-blue-700 duration-400 font-bold">
+            SignUp
+          </Link>
+          /
+          <Link to={"/login"} className="hover:text-blue-700 duration-400 font-bold">
+            Login
+          </Link>
+        </div>
       </div>
-      <div className=" flex">
-        <a href="tel:+8801580812107" className=" hover:text-blue-700 flex items-center gap-2 text-sm border-0 hover:border-2 duration-300 px-3 hover:border-blue-700 rounded-xl"> <FaPhoneAlt size={20} color="blue" /> +016-XXXX</a>
-        <Link className=" px-5 py-2 rounded-xl bg-blue-500 text-white hover:border-2 hover:border-blue-600 hover:text-blue-700 hover:bg-white duration-300">Appointment</Link>
-        <Link></Link>
-      </div>
 
+      {/* ------------------------------------------------Responsive button-------------------------------------- */}
+      <div className="md:hidden">
+        {!menu ? (
+          <div className="rotate-0 duration-300 rounded-lg" onClick={handleMenuOpen}>
+            <FcMenu color="blue" size={35} />
+          </div>
+        ) : (
+          <div className="rotate-0 duration-300 rounded-lg" onClick={handleMenuClose}>
+            <RxCross1 color="blue" size={25} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
